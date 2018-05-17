@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["validator","Validator"],"mappings":";;AACA,IAAIA,YAAY,IAAIC,SAAJ,CAAc,cAAd,CAAhB","file":"main.js","sourcesContent":["\nlet validator = new Validator('[name=email]')\n\n"]}

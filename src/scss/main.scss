@@ -1,0 +1,48 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ccc;
+	font-family: sans-serif;
+}
+
+
+
+
+/* 2. Content ================================= */
+form {
+	font-size: 1.2em;
+	label {
+		display: block;
+		margin: 1em 0;
+		input {
+			font-size: 1em;
+			padding: 10px;
+			&.small {
+				width: 100px;
+			}
+		}
+	}
+}
