@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.js"],"names":["validator","Validator"],"mappings":";;AACA,IAAIA,YAAY,IAAIC,SAAJ,CAAc,cAAd,CAAhB","file":"main.js","sourcesContent":["\nlet validator = new Validator('[name=email]')\n\n"]}
+{"version":3,"sources":["main.js"],"names":["Validator"],"mappings":";;AACA,IAAIA,SAAJ,CAAc,YAAd;AACA,IAAIA,SAAJ,CAAc,cAAd;AACA,IAAIA,SAAJ,CAAc,aAAd","file":"main.js","sourcesContent":["\nnew Validator('[name=day]')\nnew Validator('[name=month]')\nnew Validator('[name=year]')\n\n"]}

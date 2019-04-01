@@ -1,3 +1,5 @@
 
-let validator = new Validator('[name=email]')
+new Validator('[name=day]')
+new Validator('[name=month]')
+new Validator('[name=year]')
 
