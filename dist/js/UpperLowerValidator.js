@@ -1,45 +1,62 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var UpperLowerValidator = function (_Validator) {
-	_inherits(UpperLowerValidator, _Validator);
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-	function UpperLowerValidator(selector) {
-		_classCallCheck(this, UpperLowerValidator);
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-		// call constructor in Validator()
-		var _this = _possibleConstructorReturn(this, (UpperLowerValidator.__proto__ || Object.getPrototypeOf(UpperLowerValidator)).call(this, selector));
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
 
-		console.log("constructor from UpperLowerValidator");
-		return _this;
-	}
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
-	_createClass(UpperLowerValidator, [{
-		key: "validate",
-		value: function validate() {
-			_get(UpperLowerValidator.prototype.__proto__ || Object.getPrototypeOf(UpperLowerValidator.prototype), "validate", this).call(this);
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-			var lowerRegex = /[a-z]/;
-			if (!this.$field.value.match(lowerRegex)) {
-				this.errors.push("You need at least one lowercase character");
-			}
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-			var upperRegex = /[A-Z]/;
-			if (!this.$field.value.match(upperRegex)) {
-				this.errors.push("You need at least one uppercase character");
-			}
-		}
-	}]);
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-	return UpperLowerValidator;
+var UpperLowerValidator =
+/*#__PURE__*/
+function (_Validator) {
+  _inherits(UpperLowerValidator, _Validator);
+
+  function UpperLowerValidator(selector) {
+    var _this;
+
+    _classCallCheck(this, UpperLowerValidator);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UpperLowerValidator).call(this, selector)); // call constructor in Validator()
+
+    console.log("constructor from UpperLowerValidator");
+    return _this;
+  }
+
+  _createClass(UpperLowerValidator, [{
+    key: "validate",
+    value: function validate() {
+      _get(_getPrototypeOf(UpperLowerValidator.prototype), "validate", this).call(this);
+
+      var lowerRegex = /[a-z]/;
+
+      if (!this.$field.value.match(lowerRegex)) {
+        this.errors.push("You need at least one lowercase character");
+      }
+
+      var upperRegex = /[A-Z]/;
+
+      if (!this.$field.value.match(upperRegex)) {
+        this.errors.push("You need at least one uppercase character");
+      }
+    }
+  }]);
+
+  return UpperLowerValidator;
 }(Validator);
 //# sourceMappingURL=UpperLowerValidator.js.map

@@ -38,17 +38,17 @@ class Validator {
 		// add event listener to call this.validate, 
 		// but overrule its _this_ logic, and force its
 		// _this_ to be the Validate class instance, not the DOM element that triggers this event
-		this.$field.addEventListener(`keyup`, this.validate.bind(this))
-		this.$field.addEventListener(`blur`, this.validate.bind(this))
+		this.$field.addEventListener(`keyup`, this.validate)
+		this.$field.addEventListener(`blur`, this.validate)
 
 		// add event listener to call this.showErrors (after validation), 
 		// but overrule its _this_ logic, and force its
 		// _this_ to be the Validate class instance, not the DOM element that triggers this event
-		this.$field.addEventListener(`keyup`, this.showErrors.bind(this))
-		this.$field.addEventListener(`blur`, this.showErrors.bind(this))
+		this.$field.addEventListener(`keyup`, this.showErrors)
+		this.$field.addEventListener(`blur`, this.showErrors)
 	}
 
-	validate() {
+	validate = () => {
 		console.log(`validate in Validator`)
 
 		// empty out the array of collected error message text
@@ -70,7 +70,7 @@ class Validator {
 		// at this point, any other validators that extend this one will run their own logic too
 	}
 
-	showErrors() {
+	showErrors = () => {
 		console.log(`showErrors in Validator`)
 
 		if (this.errors.length) {
