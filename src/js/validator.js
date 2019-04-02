@@ -3,11 +3,11 @@ class Validator {
 		console.log('constructor from Validator')
 	}
 
-	validate() {
+	validate = () => {
 	
 	}
 
-	showErrors() {
+	showErrors = () => {
 		
 	}
 

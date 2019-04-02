@@ -1,24 +1,16 @@
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+"use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Validator = function () {
-	function Validator(selector) {
-		_classCallCheck(this, Validator);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-		console.log('constructor from Validator');
-	}
+var Validator = function Validator(selector) {
+  _classCallCheck(this, Validator);
 
-	_createClass(Validator, [{
-		key: 'validate',
-		value: function validate() {}
-	}, {
-		key: 'showErrors',
-		value: function showErrors() {}
-	}]);
+  _defineProperty(this, "validate", function () {});
 
-	return Validator;
-}();
-//# sourceMappingURL=Validator.js.map
+  _defineProperty(this, "showErrors", function () {});
+
+  console.log('constructor from Validator');
+};
+//# sourceMappingURL=validator.js.map
